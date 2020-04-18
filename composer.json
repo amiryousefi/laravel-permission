@@ -1,0 +1,16 @@
+{
+    "name": "amir/laravel-permission",
+    "description": "an easy and flexible way for permissions management",
+    "authors": [
+        {
+            "name": "Amir Yousefi",
+            "email": "amiryousefi.it@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "amir\\laravelpermission\\": "src/"
+        }
+    }
+}
