@@ -7,6 +7,13 @@
             "email": "amiryousefi.it@gmail.com"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "amir\\laravelpermission\\LaravelPermissionServiceProvider"
+            ]
+        }
+    },
     "require": {},
     "autoload": {
         "psr-4": {
