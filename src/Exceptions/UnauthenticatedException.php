@@ -1,6 +1,6 @@
 <?php
 
-namespace amir\laravelpermission\Exception;
+namespace amir\laravelpermission\Exceptions;
 
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
