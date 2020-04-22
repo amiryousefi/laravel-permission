@@ -2,8 +2,8 @@
 
 namespace amir\laravelpermission\Middleware;
 
-use amir\laravelpermission\Exception\UnauthenticatedException;
-use amir\laravelpermission\Exception\UnauthorizedException;
+use amir\laravelpermission\Exceptions\UnauthenticatedException;
+use amir\laravelpermission\Exceptions\UnauthorizedException;
 use amir\laravelpermission\Models\Permission;
 use Closure;
 use Illuminate\Http\Request;
