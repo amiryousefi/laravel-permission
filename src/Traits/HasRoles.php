@@ -1,8 +1,8 @@
 <?php
 
-namespace amir\laravelpermission\Traits;
+namespace Amir\Permission\Traits;
 
-use amir\laravelpermission\Models\Role;
+use Amir\Permission\Models\Role;
 
 trait HasRoles
 {

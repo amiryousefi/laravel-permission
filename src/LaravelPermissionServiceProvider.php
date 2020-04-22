@@ -1,6 +1,6 @@
 <?php
-namespace amir\laravelpermission;
-use amir\laravelpermission\Middleware\AuthRoles;
+namespace Amir\Permission;
+use Amir\Permission\Middleware\AuthRoles;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
 

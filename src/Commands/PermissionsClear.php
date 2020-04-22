@@ -1,9 +1,9 @@
 <?php
 
-namespace amir\laravelpermission\Commands;
+namespace Amir\Permission\Commands;
 
-use amir\laravelpermission\Models\Permission;
-use amir\laravelpermission\Models\Role;
+use Amir\Permission\Models\Permission;
+use Amir\Permission\Models\Role;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 

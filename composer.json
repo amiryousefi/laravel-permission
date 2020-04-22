@@ -10,14 +10,14 @@
     "extra": {
         "laravel": {
             "providers": [
-                "amir\\laravelpermission\\LaravelPermissionServiceProvider"
+                "Amir\\Permission\\LaravelPermissionServiceProvider"
             ]
         }
     },
     "require": {},
     "autoload": {
         "psr-4": {
-            "amir\\laravelpermission\\": "src/"
+            "Amir\\Permission\\": "src/"
         }
     }
 }

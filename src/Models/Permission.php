@@ -1,6 +1,6 @@
 <?php
 
-namespace amir\laravelpermission\Models;
+namespace Amir\Permission\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
