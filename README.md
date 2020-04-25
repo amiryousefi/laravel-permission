@@ -2,7 +2,7 @@
 An easy and flexible Laravel authorization and roles permission management
 
 ## Why we need a Laravel permission package
-
+In many projects, we need to implement a role-based permissions management system for our users. Although Laravel has the best tools to manage users' permissions, I build this package to make it simpler, more flexible, and to avoid duplicate work in many web projects built on Laravel.
 
 ## How to use
 The idea is to use this package as easy and as flexible as possible.
