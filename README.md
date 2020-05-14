@@ -15,7 +15,7 @@ Although the `laravel-permission` package does most of the work, you could easil
 ### Installation
 Start with installing the package through the composer. Run this command in your terminal:
 ```
-$ composer install amir/laravel-permission
+$ composer require amir/laravel-permission
 ```
 
 After that, you need to run the migration files:
