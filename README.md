@@ -37,7 +37,7 @@ You can put your routes for a role in a `Route` group like this:
 Route::group([
     'middleware' => 'auth.role',
     'prefix' => ...,
-    'role' => 'admin',
+    'role' => ['admin', 'customer'],
     ...
 ],function (){
     ...
