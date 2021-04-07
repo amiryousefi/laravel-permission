@@ -41,26 +41,38 @@ class PermissionsGenerate extends Command
     public function handle()
     {
         $options = $this->options();
-        if ($options['fresh']){
+
+        if ($options['fresh']) {
             Permission::query()->delete();
             Role::query()->delete();
         }
+
         $routes = Route::getRoutes()->getRoutes();
 
         foreach ($routes as $route){
             $action = $route->getActionname();
-            if($action == "Closure"){
+
+            if ($action == "Closure") {
                 continue;
             }
-            $name = $route->getName();
 
+            $name = $route->getName();
             $permission = Permission::firstOrCreate(['action'=>$action, 'name'=>$name]);
 
-            if(key_exists('role', $route->action)){
-                $role = $route->action['role'];
-                $role = Role::firstOrCreate(['name'=> $role]);
+            if (key_exists('role', $route->action)) {
+                $roles = $route->action['role'];
 
-                $role->permissions()->syncWithoutDetaching($permission->id);
+                if (is_array($roles)) {
+                    foreach ($roles as $role) {
+                        $role = Role::firstOrCreate(['name'=> $role]);
+
+                        $role->permissions()->syncWithoutDetaching($permission->id);
+                    }
+                } else {
+                    $role = Role::firstOrCreate(['name'=> $roles]);
+
+                    $role->permissions()->syncWithoutDetaching($permission->id);
+                }
             }
         }
     }
