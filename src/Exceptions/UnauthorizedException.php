@@ -9,7 +9,7 @@ class UnauthorizedException extends HttpException
 
     public static function noPermission()
     {
-        return new static(403, 'User done\'t have permission', null, []);
+        return new static(403, 'User don\'t have permission', null, []);
     }
 
 }
