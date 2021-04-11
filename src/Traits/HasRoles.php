@@ -8,6 +8,6 @@ trait HasRoles
 {
     public function role()
     {
-        return $this->belongsTo(Role::class)->first();
+        return $this->belongsTo(Role::class);
     }
 }
