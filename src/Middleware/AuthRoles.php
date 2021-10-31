@@ -20,15 +20,19 @@ class AuthRoles
      */
     public function handle($request, Closure $next)
     {
-        
-        $guard = auth('api')->check() ? 'api' : '';
 
-        throw_if(!auth($guard)->check(), UnauthenticatedException::notLoggedIn());
+        $guards = collect(config('auth.guards'));
+
+        $authGuard = $guards->keys()->filter(function($key) {
+            return auth($key)->check();
+        })->first();
+
+        throw_if(!auth($authGuard)->check(), UnauthenticatedException::notLoggedIn());
 
         $action = $request->route()->getActionname();
         $name = $request->route()->getActionname();
 
-        $role_id = auth($guard)->user()->role_id;
+        $role_id = auth($authGuard)->user()->role_id;
 
         $permission = Permission::where(function ($query)use ($action, $name){
             $query->where('name', $name);
