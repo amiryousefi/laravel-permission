@@ -57,7 +57,10 @@ class PermissionsGenerate extends Command
             }
 
             $name = $route->getName();
-            $permission = Permission::firstOrCreate(['action'=>$action, 'name'=>$name]);
+            $permission = Permission::updateOrCreate(
+                ['name'=>$name],
+                ['action'=>$action]
+            );
 
             if (key_exists('role', $route->action)) {
                 $roles = $route->action['role'];
