@@ -12,6 +12,6 @@ trait HasRoles
     }
     
     public function getRoleNameAttribute(){
-        return $this->role()->first() ? $this->role()->first()->name : null ;
+        return $this->role()->first()->name ?? null ;
     }
 }
