@@ -52,8 +52,10 @@ class PermissionsGenerate extends Command
         foreach ($routes as $route){
             $action = $route->getActionname();
 
-            if ($action == "Closure") {
-                continue;
+            if ($action == "Closure")
+                {
+                    continue;
+                }
             }
 
             $name = $route->getName();
