@@ -22,7 +22,17 @@ After that, you need to run the migration files:
 ```
 $ php artisan migrate
 ```
+On User Model add
 
+```php
+use Amir\Traits\HasRoles;
+class User extends Authenticatable
+{
+    use HasRoles;
+
+    
+
+```
 ### How to authorize user
 This package adds a `role_id` to the `users` table.
 Roles are stored in the `roles` table. You can assign a role to a user in your administrator panel or by creating a seed file.
@@ -110,6 +120,12 @@ This command erases all permissions assigned to roles, so you can regenerate per
 Also, you can use these options in combination:
 ```
 $ php artisan permissions:clear --roles admin --tables permission_role
+```
+On routes you can now
+```
+@can_access('home.index')
+    <a href="{{ route("home.index") }}">Home</a>
+@endcan_access
 ```
 
 
