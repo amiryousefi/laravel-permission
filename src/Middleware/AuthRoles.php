@@ -29,7 +29,7 @@ class AuthRoles
 
         throw_if(!auth($authGuard)->check(), UnauthenticatedException::notLoggedIn());
 
-        $action = $request->route()->getActionname();
+        /*$action = $request->route()->getActionname();
         $name = $request->route()->getActionname();
 
         $role_id = auth($authGuard)->user()->role_id;
@@ -39,7 +39,10 @@ class AuthRoles
             $query->orWhere('action', $action);
         })->whereHas('roles', function ($query) use($role_id){
             $query->where('id',$role_id);
-        })->first();
+        })->first();*/
+        $action     =   $request->route()->getActionname();
+        $name       =   $request->route()->getName();
+        $permission =   auth($authGuard)->user()->permission->where('name',$name)->where('action',$action);
 
         throw_if(is_null($permission), UnauthorizedException::noPermission());
 
