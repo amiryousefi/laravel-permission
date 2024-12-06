@@ -16,7 +16,7 @@ class Role extends Model
         $query->where('name', $name);
     }
 
-    public function scopeNames(Builder $query, string $names)
+    public function scopeNames(Builder $query, array $names)
     {
         $query->whereIn('name', $names);
     }
